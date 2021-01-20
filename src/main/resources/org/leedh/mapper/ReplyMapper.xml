@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+	MyBatis는 기본적으로 PreparedStatement를 이용해서 처리됨.
+	개발자가 PreparedStatement에 들어가는 파라미터를 사용할 때는 '#{}'기호를 이용해서 처리함.
+	'#{}'의 규칙.
+	1. 파라미터가 여러 속성을 가진 객체인 경우, '#{num}'은 getNum() or setNum()을 의미함.
+	2. 파라미터가 하나이고, 기본자료형이나 문자열인 경우 값이 그대로 전달됨.
+	3. 파라미터가 Map타입인 경우 '#{num}'은 Map객체의 키값이 'num'인 값을 찾는다.
+
+	패키지 익스플로러에서 프로젝트 경로구조와 상관없이 개발자가 mapper태그의 namespace 속성값을
+    지정한 것이 프로젝트에서 통용되는 경로명으로 인식됨.
+-->
+
+<mapper namespace="org.leedh.mapper.ReplyMapper">
+
+	<insert id="insert">
+		INSERT INTO
+			TBL_REPLY (RNO,BNO,REPLY,REPLYER)
+		VALUES
+			(SEQ_REPLY.NEXTVAL, #{bno},#{reply}, #{replyer})
+	</insert>
+
+	<select id="read" resultType="replyVO">
+		SELECT
+			*
+		FROM
+			TBL_REPLY
+		WHERE
+			RNO = #{rno}
+	</select>
+
+	<delete id="delete">
+		DELETE FROM
+			TBL_REPLY
+		WHERE
+			RNO = #{rno}
+	</delete>
+
+	<update id="update">
+		UPDATE
+			TBL_REPLY
+		SET
+			REPLY = #{reply},updatedate = sysdate
+		WHERE
+			RNO = #{rno}
+	</update>
+
+	<select id="getListWithPaging" resultType="replyVO">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				(
+					SELECT
+						/* +INDEX(TBL_REPLY IDX_REPLY) */
+						ROWNUM RN, RNO, BNO, REPLY, REPLYER, REPLYDATE, UPDATEDATE
+					FROM
+						TBL_REPLY
+					WHERE
+					      BNO = #{bno}
+					  AND
+					      RNO > 0
+					  AND
+					      ROWNUM <= #{cri.pageNum} * #{cri.amount}
+				)
+			WHERE
+			      RN > (#{cri.pageNum}-1) * #{cri.amount}
+		]]>
+	</select>
+	<select id="getCountByBno" resultType="java.lang.Integer">
+		<![CDATA[
+		SELECT
+			COUNT(RNO)
+		FROM
+			TBL_REPLY
+		WHERE
+			BNO = #{bno}
+		]]>
+	</select>
+
+
+</mapper>

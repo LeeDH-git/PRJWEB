@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!-- typeAlias : Full Class Name을 alias로 정의 :: Class Name 관리 : Full Class Name을 별칭(Alias) 관리 -->
+    <typeAliases>
+        <typeAlias
+                type="org.leedh.vo.BoardVO" alias="boardVO"/>
+        <typeAlias
+                type="org.leedh.vo.ReplyVO" alias="replyVO"/>
+    </typeAliases>
+
+</configuration>
