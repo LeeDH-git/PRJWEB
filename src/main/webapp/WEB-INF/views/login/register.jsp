@@ -8,7 +8,8 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Focusleader Project Manager 회원가입</title>
-        <link href="${pageContext.request.contextPath}/resources/dist/css/styles.css" rel="stylesheet" />
+        <%-- <link href="${pageContext.request.contextPath}/resources/dist/css/styles.css" rel="stylesheet" /> --%>
+         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
@@ -72,7 +73,8 @@
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputSkillLevel">기술등급</label>
                                                                                                                <label class="small mb-1" for="inputSkillLevel">기술등급</label>
-                                                        <select class = "from-control py" id ="inputSkillLevel" style="width:480px;text-align-last:center">                                    
+                                                        <br/>
+                                                        <select class = "form-control py" id ="inputSkillLevel" style="width:130px;text-align-last:center">                                    
                                                         	  <option>초급</option>
 															  <option>중하</option>
 	  														  <option>중</option>
@@ -119,9 +121,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block" href="login.jsp">Create Account</a></div>
+                                            <div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block" href="login.jsp">Create Account</a></div>-->
                                         </form>
-                                    </div> -->
+                                    </div> 
                                 </div>
                             </div>
                         </div>
