@@ -39,7 +39,7 @@
                                 </form>
                             </div>
                             <div class="card-footer text-center">
-                                <div class="small"><a href="register.jsp">Need an account? Sign up!</a></div>
+                                <div class="small"><a href="register.j2sp">Need an account? Sign up!</a></div>
                             </div>
                         </div>
                     </div>

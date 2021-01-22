@@ -43,7 +43,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><a href="register.jsp">계정이 없으신가요? 회원가입!</a></div>
+                                        <div class="small"><a href="register.j2sp">계정이 없으신가요? 회원가입!</a></div>
                                     </div>
                                 </div>
                             </div>
