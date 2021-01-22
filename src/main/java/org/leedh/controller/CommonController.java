@@ -43,7 +43,7 @@ public class CommonController {
     public String login(EmpVO empVO, HttpServletRequest req, RedirectAttributes rttr) {
         logger.info("로그인");
 
-        HttpSession session = req.getSession();
+        HttpSession session = req.getession();
         empVO login =
     }
 
