@@ -22,7 +22,72 @@
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
                                     <div class="card-body">
                                         <form>
-                                            <div class="form-row">
+                                                                          	<div class = form-group">
+                                        		<label class="small mb-1" for="inputEMPNO">사원 번호 </label>
+                                        		<input class = "form-control py-4" id = "inputEMPNO" type="text" placeholder="사원번호 입력" />
+                                        	</div>
+                                        		
+
+                                                <!--    <div class="col-md-6"> -->
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputName">이름</label>
+                                                        <input class="form-control py-4" id="inputName" type="text" placeholder="이름 입력" />
+                                                    </div>
+
+     
+                                               		<div class="form-group">
+                                               			<lable class = "small mb-1" for ="inputEmailAddress">아이디(이메일)</lable>
+                                               			<input class="form-control py-4" id=inputEmailAddress" type = "email" aria-describedby ="emailHelp" placeholder = "아이디(이메일) 입력"/>
+                                               		</div>
+
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputPassword">비밀번호</label>
+                                                        <input class="form-control py-4" id="inputPassword" type="password" placeholder="비밀번호" />
+                                                    </div>
+                                                    
+                                                      <div class="form-group">
+                                                        <label class="small mb-1" for="inputConfirmPassword">비밀번호 확인</label>
+                                                        <input class="form-control py-4" id="inputConfirmPassword" type="password" placeholder="비밀번호 확인"/>
+                                                    </div>
+                                                    
+                                                     <div class="form-group">
+                                                        <label class="small mb-1" for="inputPhoneNumber">휴대전화 번호</label>
+                                                        <input class="form-control py-4" id="inputPhoneNumber" type="text" placeholder="휴대전화 번호 입력"/>
+                                                    </div>
+                                                    
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputEmergencyContactNumber">비상연락처</label>
+                                                        <input class="form-control py-4" id="inputEmergencyContactNumber" type="text" placeholder="비상연락처 입력"/>
+                                                    </div>
+                                                    
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputJoinDate">입사일</label>
+                                                        <input class="form-control py-4" id="inputJoinDate" type="text" placeholder="입사일 입력"/>
+                                                    </div>
+                                                    
+                                                     <div class="form-group">
+                                                        <label class="small mb-1" for="inputPosition">직위</label>
+                                                        <input class="form-control py-4" id="inputPosition" type="text" placeholder="직위 입력"/>
+                                                    
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputSkillLevel">기술등급</label>
+                                                                                                               <label class="small mb-1" for="inputSkillLevel">기술등급</label>
+                                                        <select class = "from-control py" id ="inputSkillLevel" style="width:480px;text-align-last:center">                                    
+                                                        	  <option>초급</option>
+															  <option>중하</option>
+	  														  <option>중</option>
+	  														  <option>중상</option>
+															  <option>고급</option>
+															  <option>특급</option>
+                                                        </select>
+                                                      <!-- <input class="form-control py-4" id="inputSkillLevel" type="text" placeholder="기술등급 입력"/> -->
+                                                    </div>
+                                                    <div style="text-align:center;">
+                                                  	  <button type= "button" class="btn btn-primary">회원가입 </button>
+                                                    <div class="card-footer text-center">
+                                     				   <div class="small"><a href="login.jsp">Have an account? Go to login</a></div>
+                                 				   </div>
+                                 <!--            <div class="form-row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputFirstName">First Name</label>
@@ -56,10 +121,7 @@
                                             </div>
                                             <div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block" href="login.jsp">Create Account</a></div>
                                         </form>
-                                    </div>
-                                    <div class="card-footer text-center">
-                                        <div class="small"><a href="login.jsp">Have an account? Go to login</a></div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
