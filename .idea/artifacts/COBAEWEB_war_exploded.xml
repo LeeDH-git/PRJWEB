@@ -6,7 +6,7 @@
         <element id="directory" name="classes">
           <element id="module-output" name="COBAEWEB" />
           <element id="module-output" name="PRJMNG" />
-          <element id="javaee-facet-classes" facet="PRJWEB/web/Web" />
+          <element id="javaee-facet-classes" facet="PJTMNG/web/Web" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.6.RELEASE" />
@@ -55,7 +55,7 @@
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:5.0.6.RELEASE" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="PRJWEB/web/Web" />
+      <element id="javaee-facet-resources" facet="PJTMNG/web/Web" />
     </root>
   </artifact>
 </component>

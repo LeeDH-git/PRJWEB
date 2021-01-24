@@ -5,7 +5,7 @@
 <configuration>
 
     <typeAliases>
-        <typeAlias type="org.leedh.mapper.loginMapper" alias="LoginMapper"/>
+        <typeAlias type="org.leedh.mapper.loginMapper" alias="UserMapper"/>
     </typeAliases>
 
 </configuration>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="UserMapper">
+
+    <!--회원가입-->
+    <insert id="register">
+        INSERT INTO FL_EMP (EMP_NM,
+                            EMP_NO,
+                            EMP_EMAIL,
+                            EMP_PW,
+                            EMP_PHONE_NO,
+                            EMP_EMER_NO,
+                            EMP_JOIN_DATE,
+                            PJT_POS_C,
+                            PJT_LV_C)
+        VALUES (
+                   #{empNo}
+                   #{empNm}
+                   #{empEmail}
+                   #{empPhoneNo}
+                   #{empEmerNo}
+                   #{empJoinDate}
+                   #{pjtPosC}
+                   #{pjtLvC}
+               )
+    </insert>
+
+    <!-- 로그인 -->
+    <select id="login" resultMap="">
+        SELECT *
+        FROM FL_EMP
+        WHERE EMP_EMAIL = #{empEmail}
+    </select>
+
+</mapper>
