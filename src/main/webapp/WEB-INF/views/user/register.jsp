@@ -66,18 +66,31 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="small mb-1" for="pjtPosC">직위</label>
-                                        <input class="form-control py-4" id="pjtPosC" type="text"
-                                               placeholder="직위 입력"/>
+                                        <select class="form-control py" id="pjtPosC"
+                                                style="width:130px;text-align-last:center">
+                                            <option value="none">=== 선택 ===</option>
+                                            <option value="A001">사원</option>
+                                            <option value="A002">주임</option>
+                                            <option value="A003">대리</option>
+                                            <option value="A004">과장</option>
+                                            <option value="A005">차장</option>
+                                            <option value="A006">부장</option>
+                                            <option value="A007">이사</option>
+                                            <option value="A008">상무</option>
+                                            <option value="A009">전무</option>
+                                            <option value="A010">대표이사</option>
+                                        </select>
+
                                         <div class="form-group">
                                             <label class="small mb-1" for="pjtLvC">기술등급</label>
                                             <br/>
                                             <select class="form-control py" id="pjtLvC"
                                                     style="width:130px;text-align-last:center">
                                                 <option value="none">=== 선택 ===</option>
-                                                <option value="01">초급</option>
-                                                <option value="02">중급</option>
-                                                <option value="03">고급</option>
-                                                <option value="04">특급</option>
+                                                <option value="A01">초급</option>
+                                                <option value="A02">중급</option>
+                                                <option value="A03">고급</option>
+                                                <option value="A04">특급</option>
                                             </select>
                                         </div>
                                         <div style="text-align:center;">

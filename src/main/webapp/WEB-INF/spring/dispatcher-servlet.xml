@@ -28,7 +28,7 @@
     <beans:bean id="loginInterceptor" class="org.leedh.common.interceptor.LoginInterceptor"/>
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/user/loginPost"/>
+            <mvc:mapping path="/user/loginCheck"/>
             <beans:ref bean="loginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>

@@ -35,7 +35,7 @@
                                                placeholder="비밀번호를 입력하세요."/>
                                     </div>
                                     <div class="row">
-                                        <div class="custom-control custom-checkbox">
+                                        <div class="custom-control custom-checkbox iCheck">
                                             <input class="custom-control-input" id="cookie" type="checkbox"/>
                                             <label class="custom-control-label" for="cookie">로그인 유지</label>
                                         </div>
@@ -70,6 +70,23 @@
         </footer>
     </div>
 </div>
+
+<script>
+    var msg = "${Message}";
+    if (msg === "register success") {
+        alert("회원가입이 완료되었습니다.")
+    } else if (msg === "Fail") {
+        alert("이메일과 비밀번호를 확인해주세요.")
+    }
+    $(function () {
+        $('input').iCheck({
+            checkboxClass:'ichcbox_square-blue',
+            ra
+        })
+    })
+
+</script>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
