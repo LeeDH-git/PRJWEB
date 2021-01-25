@@ -1,6 +1,5 @@
 package org.leedh.user.dao;
 
-import org.leedh.user.vo.EmpAdminVO;
 import org.leedh.user.vo.EmpVO;
 import org.leedh.user.vo.LoginDTO;
 

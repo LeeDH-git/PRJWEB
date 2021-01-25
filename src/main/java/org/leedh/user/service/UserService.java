@@ -1,7 +1,5 @@
 package org.leedh.user.service;
 
-import org.leedh.user.dao.UserDao;
-import org.leedh.user.vo.EmpAdminVO;
 import org.leedh.user.vo.EmpVO;
 import org.leedh.user.vo.LoginDTO;
 import org.springframework.stereotype.Service;
