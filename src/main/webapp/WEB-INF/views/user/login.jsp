@@ -23,12 +23,12 @@
                                     <div class="card-body">
                                         <form>
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputEmailAddress">이메일</label>
-                                                <input class="form-control py-4" id="inputEmailAddress" type="email" placeholder="Enter email address" />
+                                                <label class="small mb-1" for="empNm">이메일</label>
+                                                <input class="form-control py-4" id="empNm" type="email" placeholder="Enter email address" />
                                             </div>
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputPassword">비밀번호</label>
-                                                <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" />
+                                                <label class="small mb-1" for="empPw">비밀번호</label>
+                                                <input class="form-control py-4" id="empPw" type="password" placeholder="Enter password" />
                                             </div>
                                             <div class="form-group">
                                                 <div class="custom-control custom-checkbox">
@@ -43,7 +43,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><a href="register.j2sp">계정이 없으신가요? 회원가입!</a></div>
+                                        <div class="small"><a href="register.jsp">계정이 없으신가요? 회원가입!</a></div>
                                     </div>
                                 </div>
                             </div>

@@ -1,7 +1,6 @@
 package org.leedh.user.dao;
 
 import org.apache.ibatis.session.SqlSession;
-import org.leedh.user.vo.EmpAdminVO;
 import org.leedh.user.vo.EmpVO;
 import org.leedh.user.vo.LoginDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +21,7 @@ public class UserDaoImpl implements UserDao {
     // 회원가입 처리
     @Override
     public void register(EmpVO empVO) throws Exception {
-        sqlSession.insert(NAMESPACE + "regsiter", empVO);
+        sqlSession.insert(NAMESPACE + "register", empVO);
     }
 
     // 로그인 처리

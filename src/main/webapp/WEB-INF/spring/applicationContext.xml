@@ -52,8 +52,7 @@
     <task:annotation-driven/>
 
     <mybatis-spring:scan base-package="org.leedh.mapper"/>
-    <context:component-scan base-package="org.leedh.service"/>
-    <context:component-scan base-package="org.leedh.aop"/>
+    <context:component-scan base-package="org.leedh.user.service"/>
 
     <aop:aspectj-autoproxy/>
 
