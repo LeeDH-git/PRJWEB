@@ -47,7 +47,8 @@
                                 </form>
                             </div>
                             <div class="card-footer text-center">
-                                <div class="small"><a href="${pageContext.request.contextPath}/user/register">계정이 없으신가요? 회원가입!</a></div>
+                                <div class="small"><a href="${pageContext.request.contextPath}/user/register">계정이 없으신가요?
+                                    회원가입!</a></div>
                             </div>
                         </div>
                     </div>
@@ -75,7 +76,7 @@
     var msg = "${Message}";
     if (msg === "register success") {
         alert("회원가입이 완료되었습니다.")
-    } else if (msg === "Fail") {
+    } else {
         alert("이메일과 비밀번호를 확인해주세요.")
     }
 </script>

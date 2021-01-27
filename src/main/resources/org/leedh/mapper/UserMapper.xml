@@ -35,7 +35,7 @@
 
 
     <!-- 로그인 -->
-    <select id="login" resultType="EmpVO">
+    <select id="login" parameterType="EmpVO">
         SELECT *
         FROM FL_EMP
         WHERE EMP_EMAIL = #{empEmail}
