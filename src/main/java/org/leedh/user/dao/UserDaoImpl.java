@@ -1,5 +1,6 @@
 package org.leedh.user.dao;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
 import org.leedh.user.vo.EmpVO;
 import org.leedh.user.vo.LoginDTO;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
+@Slf4j
 public class UserDaoImpl implements UserDao {
 
     private static final String NAMESPACE = "org.leedh.mapper.UserMapper";
@@ -22,6 +24,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void register(EmpVO empVO) throws Exception {
         sqlSession.insert(NAMESPACE + ".register", empVO);
+        log.debug("register error : " + empVO);
     }
 
     // 로그인 처리

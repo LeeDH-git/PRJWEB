@@ -5,31 +5,38 @@
 
 <mapper namespace="org.leedh.mapper.UserMapper">
 
+    <resultMap id="userResultMap" type="EmpVO">
+        <id property="empEmail" column="EMP_EMAIL"/>
+        <result property="empNo" column="EMP_NO"/>
+        <result property="empNm" column="EMP_NM"/>
+        <result property="empPw" column="EMP_PW"/>
+        <result property="empPhoneNo" column="EMP_PHONE_NO"/>
+        <result property="empEmerNo" column="EMP_EMER_NO"/>
+        <result property="empJoinDate" column="EMP_JOIN_DATE"/>
+        <result property="pjtPosC" column="PJT_POS_C"/>
+        <result property="pjtLvC" column="PJT_LV_C"/>
+    </resultMap>
+
+
     <!--회원가입-->
-    <insert id="register">
-        INSERT INTO FL_EMP (EMP_NM,
-                            EMP_NO,
-                            EMP_EMAIL,
-                            EMP_PW,
-                            EMP_PHONE_NO,
-                            EMP_EMER_NO,
-                            EMP_JOIN_DATE,
-                            PJT_POS_C,
-                            PJT_LV_C)
-        VALUES (
-                   #{empNo}
-                   #{empNm}
-                   #{empEmail}
-                   #{empPhoneNo}
-                   #{empEmerNo}
-                   #{empJoinDate}
-                   #{pjtPosC}
-                   #{pjtLvC}
-               )
+    <insert id="register" parameterType="EmpVO">
+
+        insert into FL_EMP
+
+        values (#{empNo},
+                #{empNm},
+                #{empEmail},
+                #{empPw},
+                #{empPhoneNo},
+                #{empEmerNo},
+                #{empJoinDate},
+                #{pjtPosC},
+                #{pjtLvC})
     </insert>
 
+
     <!-- 로그인 -->
-    <select id="login" resultMap="">
+    <select id="login" resultType="EmpVO">
         SELECT *
         FROM FL_EMP
         WHERE EMP_EMAIL = #{empEmail}

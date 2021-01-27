@@ -24,49 +24,48 @@
                             <div class="card-header"><h3 class="text-center font-weight-light my-4">회원가입</h3>
                             </div>
                             <div class="card-body">
-                                <form action="${path}/user/register" method="post">
+                                <form action="${pageContext.request.contextPath}/user/register" method="post">
                                     <div class=form-group">
                                         <label class="small mb-1" for="empNo">사원 번호</label>
-                                        <input class="form-control py-4" id="empNo" type="text"
+                                        <input class="form-control py-4" id="empNo" name="empNo" type="text"
                                                placeholder="사원번호 입력 (YYMM000)"/>
                                     </div>
                                     <div class="form-group">
                                         <label class="small mb-1" for="empNm">이름</label>
-                                        <input class="form-control py-4" id="empNm" type="text"
+                                        <input class="form-control py-4" id="empNm" name="empNm" type="text"
                                                placeholder="이름 입력"/>
                                     </div>
                                     <div class="form-group">
                                         <label class="small mb-1" for="empEmail">이메일</label>
-                                        <input type="email" id="empEmail" class="form-control py-4"
+                                        <input type="email" id="empEmail" name="empEmail" class="form-control py-4"
                                                placeholder="이메일을 입력하세요">
-
                                     </div>
                                     <div class="form-group">
                                         <label class="small mb-1" for="empPw">비밀번호</label>
-                                        <input class="form-control py-4" id="empPw" type="password" placeholder="비밀번호"/>
+                                        <input class="form-control py-4" id="empPw" name="empPw" type="password" placeholder="비밀번호"/>
                                     </div>
-                                    <div class="form-group">
+                               <%--     <div class="form-group">
                                         <label class="small mb-1">비밀번호 확인</label>
                                         <input class="form-control py-4" type="password" placeholder="비밀번호 확인"/>
-                                    </div>
+                                    </div>--%>
                                     <div class="form-group">
                                         <label class="small mb-1" for="empPhoneNo">휴대전화 번호</label>
-                                        <input class="form-control py-4" id="empPhoneNo" type="text"
+                                        <input class="form-control py-4" id="empPhoneNo" name="empPhoneNo" type="text"
                                                placeholder="휴대전화 번호 입력"/>
                                     </div>
                                     <div class="form-group">
                                         <label class="small mb-1" for="empEmerNo">비상연락처</label>
-                                        <input class="form-control py-4" id="empEmerNo" type="text"
+                                        <input class="form-control py-4" id="empEmerNo" name="empEmerNo" type="text"
                                                placeholder="비상연락처 입력"/>
                                     </div>
                                     <div class="form-group">
                                         <label class="small mb-1" for="empJoinDate">입사일</label>
-                                        <input class="form-control py-4" id="empJoinDate" type="date"
+                                        <input class="form-control py-4" id="empJoinDate" name="empJoinDate" type="date"
                                                placeholder="입사일 입력"/>
                                     </div>
                                     <div class="form-group">
                                         <label class="small mb-1" for="pjtPosC">직위</label>
-                                        <select class="form-control py" id="pjtPosC"
+                                        <select class="form-control py" id="pjtPosC" name="pjtPosC"
                                                 style="width:130px;text-align-last:center">
                                             <option value="none">=== 선택 ===</option>
                                             <option value="A001">사원</option>
@@ -84,7 +83,7 @@
                                         <div class="form-group">
                                             <label class="small mb-1" for="pjtLvC">기술등급</label>
                                             <br/>
-                                            <select class="form-control py" id="pjtLvC"
+                                            <select class="form-control py" id="pjtLvC" name="pjtLvC"
                                                     style="width:130px;text-align-last:center">
                                                 <option value="none">=== 선택 ===</option>
                                                 <option value="A01">초급</option>

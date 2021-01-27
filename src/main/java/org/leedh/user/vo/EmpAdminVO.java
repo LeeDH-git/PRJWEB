@@ -5,16 +5,19 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Getter
 @Setter
 @ToString
 public class EmpAdminVO {
-    private String empNo;
+    private int empNo;
     private LocalDateTime loginDate;
     private LocalDateTime joinDate;
     private LocalDateTime usChangePwDate;
     private int loginFailCount;
     private LocalDateTime listAccessDate;
+    private String pjtDutyC;
+    private String pjtJgC;
+    private String pjtDeptC;
+
 }
