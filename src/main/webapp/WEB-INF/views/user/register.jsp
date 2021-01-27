@@ -26,9 +26,9 @@
                             <div class="card-body">
                                 <form action="${path}/user/register" method="post">
                                     <div class=form-group">
-                                        <label class="small mb-1" for="empNo">사원 번호 </label>
+                                        <label class="small mb-1" for="empNo">사원 번호</label>
                                         <input class="form-control py-4" id="empNo" type="text"
-                                               placeholder="사원번호 입력"/>
+                                               placeholder="사원번호 입력 (YYMM000)"/>
                                     </div>
                                     <div class="form-group">
                                         <label class="small mb-1" for="empNm">이름</label>
@@ -36,10 +36,10 @@
                                                placeholder="이름 입력"/>
                                     </div>
                                     <div class="form-group">
-                                        <label>
-                                            <input type="email" id="empEmail" class="form-control py-4"
-                                                   placeholder="이메일을 입력하세요">
-                                        </label>
+                                        <label class="small mb-1" for="empEmail">이메일</label>
+                                        <input type="email" id="empEmail" class="form-control py-4"
+                                               placeholder="이메일을 입력하세요">
+
                                     </div>
                                     <div class="form-group">
                                         <label class="small mb-1" for="empPw">비밀번호</label>
@@ -94,7 +94,8 @@
                                             </select>
                                         </div>
                                         <div style="text-align:center;">
-                                            <button type="button" class="btn btn-primary">회원가입</button>
+                                            <button type="submit" class="btn btn-primary">회원가입</button>
+                                            <br>
                                             <div class="card-footer text-center">
                                                 <div class="small"><a href="login.jsp">계정이 있으신가요? 로그인으로</a>
                                                 </div>

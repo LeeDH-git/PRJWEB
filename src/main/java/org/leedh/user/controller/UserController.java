@@ -23,8 +23,14 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    
-    // 회원가입
+
+    // 회원가입 페이지
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String registerGET() throws Exception {
+        return "/user/register";
+    }
+
+    // 회원가입 처리
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String register(EmpVO empVO, RedirectAttributes rttr) throws Exception {
         String pw = BCrypt.hashpw(empVO.getEmpPw(), BCrypt.gensalt());

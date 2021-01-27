@@ -23,10 +23,10 @@
                   value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
         <property name="jdbcUrl"
                   value="jdbc:log4jdbc:oracle:thin:@192.168.0.101:1521:orcl"/>
-<!--
-        <property name="jdbcUrl"
-                  value="jdbc:log4jdbc:oracle:thin:@localhost:1521:orcl"/>
--->
+        <!--
+                <property name="jdbcUrl"
+                          value="jdbc:log4jdbc:oracle:thin:@localhost:1521:orcl"/>
+        -->
         <property name="username" value="prgmgtest"/>
         <property name="password" value="12345"/>
 
@@ -38,23 +38,21 @@
         <constructor-arg ref="hikariConfig"/>
     </bean>
 
-    <bean id="sqlSessionFactory"
-          class="org.mybatis.spring.SqlSessionFactoryBean">
+    <!--SqlSessionFactory 설정 : dataSource를 참조, mybatis-config.xml 경로설정-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value="classpath:/mybatis-config.xml"/>
-<!--        <property name="mapperLocations" value="classpath:org/**/*Mapper.xml"/>-->
+    </bean>
+
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <task:annotation-driven/>
 
+    <context:component-scan base-package="org.leedh"/>
     <mybatis-spring:scan base-package="org.leedh.mapper"/>
-    <context:component-scan base-package="org.leedh.user.service"/>
-
-    <aop:aspectj-autoproxy/>
-
 
 </beans>

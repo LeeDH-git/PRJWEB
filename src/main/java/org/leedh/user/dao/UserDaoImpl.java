@@ -21,13 +21,13 @@ public class UserDaoImpl implements UserDao {
     // 회원가입 처리
     @Override
     public void register(EmpVO empVO) throws Exception {
-        sqlSession.insert(NAMESPACE + "register", empVO);
+        sqlSession.insert(NAMESPACE + ".register", empVO);
     }
 
     // 로그인 처리
     @Override
     public EmpVO login(LoginDTO loginDTO) throws Exception {
-        return sqlSession.selectOne(NAMESPACE + "login", loginDTO);
+        return sqlSession.selectOne(NAMESPACE + ".login", loginDTO);
     }
 }
 
