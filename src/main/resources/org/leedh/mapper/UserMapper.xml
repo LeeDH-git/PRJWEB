@@ -22,11 +22,10 @@
     <insert id="register" parameterType="EmpVO">
 
         insert into FL_EMP
-
         values (#{empNo},
                 #{empNm},
-                #{empEmail},
                 #{empPw},
+                #{empEmail},
                 #{empPhoneNo},
                 #{empEmerNo},
                 #{empJoinDate},
