@@ -8,9 +8,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <title>Focusleader Project Manager Login</title>
-    <link href="${pageContext.request.contextPath}/resources/dist/css/styles.css" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
-            crossorigin="anonymous"></script>
+    <%@ include file="/resources/plugin/plugin.jsp" %>
 </head>
 <body class="bg-primary">
 <div id="layoutAuthentication">
@@ -23,26 +21,36 @@
                             <div class="card-header"><h3 class="text-center font-weight-light my-4">FocusLeader Project
                                 Manager</h3></div>
                             <div class="card-body">
-                                <form action="${pageContext.request.contextPath}/user/login" method="post">
+                                <form action="${pageContext.request.contextPath}/user/loginCheck" method="post">
                                     <div class="form-group">
-                                        <label class="small mb-1" for="empNm">이메일</label>
-                                        <input class="form-control py-4" id="empNm" type="email"
+                                        <label class="small mb-1" for="empEmail">이메일</label>
+                                        <input class="form-control py-4" id="empEmail" name="empEmail" type="email"
                                                placeholder="이메일을 입력하세요."/>
                                     </div>
                                     <div class="form-group">
                                         <label class="small mb-1" for="empPw">비밀번호</label>
-                                        <input class="form-control py-4" id="empPw" type="password"
+                                        <input class="form-control py-4" id="empPw" name="empPw" type="password"
                                                placeholder="비밀번호를 입력하세요."/>
                                     </div>
                                     <div class="row">
-                                        <div class="custom-control custom-checkbox iCheck">
-                                            <input class="custom-control-input" id="cookie" type="checkbox"/>
-                                            <label class="custom-control-label" for="cookie">로그인 유지</label>
+                                        <div class="col-8">
+                                            <div class="checkbox icheck">
+                                                <label>
+                                                    <input type="checkbox" name="cookie"> 로그인유지
+                                                </label>
+                                            </div>
                                         </div>
+                                        <!-- /.col -->
+                                        <div class="col-8">
+                                            <button type="submit" class="btn btn-primary btn-block btn-flat">
+                                                <i class="fa fa-sign-in"></i> 로그인
+                                            </button>
+                                        </div>
+                                        <!-- /.col -->
                                     </div>
+
                                     <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                         <a class="small" href="password.jsp">비밀번호를 잊으셨나요?</a>
-                                        <a class="btn btn-primary" type="submit">로그인</a>
                                     </div>
                                 </form>
                             </div>
@@ -73,17 +81,23 @@
 </div>
 
 <script>
+
     var msg = "${Message}";
-    if (msg === "register success") {
+    if (msg === "REGISTERED") {
         alert("회원가입이 완료되었습니다.")
-    } else {
+    } else if (msg === "FAILURE") {
         alert("이메일과 비밀번호를 확인해주세요.")
     }
+
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass:'iradio_square-blue',
+        });
+    });
+
 </script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
-<script src="${pageContext.request.contextPath}/resources/dist/js/scripts.js"></script>
+
 </body>
 </html>

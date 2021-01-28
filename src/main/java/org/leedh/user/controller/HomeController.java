@@ -13,7 +13,7 @@ public class HomeController {
     public String home() {
         log.info("Welcome home!");
 
-        return "redirect:/user/login";
+        return "home";
     }
 
 }

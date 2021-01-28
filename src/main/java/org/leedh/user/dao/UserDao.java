@@ -9,4 +9,6 @@ public interface UserDao {
 
     // 로그인
     EmpVO login(LoginDTO loginDTO) throws Exception;
+
+
 }

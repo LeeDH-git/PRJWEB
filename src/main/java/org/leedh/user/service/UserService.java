@@ -11,5 +11,4 @@ public interface UserService {
 
     // 로그인 처리
     EmpVO login(LoginDTO loginDTO) throws Exception;
-
 }

@@ -29,6 +29,9 @@ public class EmpVO {
     private String empJoinDate;
     private String pjtLvC;
     private String pjtPosC;
+    private boolean userLogin;
 
-
+    public EmpVO() {
+        this.userLogin = false;
+    }
 }

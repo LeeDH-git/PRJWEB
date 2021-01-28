@@ -13,8 +13,8 @@
         <java-version>1.8</java-version>
         <org.aspectj-version>1.9.0</org.aspectj-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.springframework-version>5.0.6.RELEASE</org.springframework-version>
-        <!-- <org.springframework-version>4.3.26.RELEASE</org.springframework-version> -->
+<!--        <org.springframework-version>5.0.6.RELEASE</org.springframework-version>-->
+         <org.springframework-version>4.3.26.RELEASE</org.springframework-version>
         <org.slf4j-version>1.7.30</org.slf4j-version>
         <log4j-version>1.2.17</log4j-version>
         <junit-version>4.12</junit-version>
@@ -175,6 +175,13 @@
             <version>${org.springframework-version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8 -->
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+            <version>19.7.0.0</version>
+        </dependency>
+
         <!-- Log4Jdbc-Log4j2 -->
         <!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4.1 -->
         <dependency>
@@ -235,6 +242,9 @@
             <version>5.0.6.RELEASE</version>
         </dependency>
     </dependencies>
+
+    <packaging>war</packaging>
+
     <build>
         <plugins>
             <plugin>
@@ -278,6 +288,7 @@
                 <version>3.3.0</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+                        <webXml>webapp\WEB-INF\web.xml</webXml>
                 </configuration>
             </plugin>
         </plugins>

@@ -11,10 +11,10 @@
 		</layout>
 	</appender>
 
-	<!-- Application Loggers -->
-	<logger name="org.leedh.controller">
-		<level value="info" />
-	</logger>
+<!--	&lt;!&ndash; Application Loggers &ndash;&gt;-->
+<!--	<logger name="org.leedh.controller">-->
+<!--		<level value="info" />-->
+<!--	</logger>-->
 
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">
@@ -47,7 +47,7 @@
 
 	<!-- Root Logger -->
 	<root>
-		<priority value="info" />
+		<priority value="debug" />
 		<appender-ref ref="console" />
 	</root>
 
