@@ -37,4 +37,5 @@ public class UserServiceImpl implements UserService {
     public List<String> selectEmpAuthOne(String empEmail) {
         return selectEmpAuthOne(empEmail);
     }
+
 }

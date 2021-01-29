@@ -87,9 +87,10 @@
 
     <!-- DB Config -->
     <s:authentication-manager>
-        <s:authentication-provider user-service-ref="userServiceImpl">
+        <s:authentication-provider ref="userLoginServiceImpl">
         </s:authentication-provider>
     </s:authentication-manager>
+
 
     <tx:annotation-driven proxy-target-class="true"/>
 
