@@ -1,12 +1,8 @@
 package org.leedh.user.vo;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
-@Getter
-@Setter
-@ToString
+@Data
 public class EmpVO {
  /*
    사원번호         empNo;
@@ -20,6 +16,7 @@ public class EmpVO {
    직위코드          pjtPosC;
 */
 
+
     private int empNo;
     private String empNm;
     private String empPw;
@@ -29,9 +26,6 @@ public class EmpVO {
     private String empJoinDate;
     private String pjtLvC;
     private String pjtPosC;
-    private boolean userLogin;
 
-    public EmpVO() {
-        this.userLogin = false;
-    }
+
 }

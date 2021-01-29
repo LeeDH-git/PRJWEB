@@ -81,21 +81,8 @@
 </div>
 
 <script>
-
-    var msg = "${Message}";
-    if (msg === "REGISTERED") {
-        alert("회원가입이 완료되었습니다.")
-    } else if (msg === "FAILURE") {
-        alert("이메일과 비밀번호를 확인해주세요.")
-    }
-
-    $(function () {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass:'iradio_square-blue',
-        });
-    });
-
+   <!-- 로그인 실패 시 출력할 메세지 -->
+    ${requestScope.loginFailMsg}
 </script>
 
 

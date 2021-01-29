@@ -44,7 +44,6 @@ CREATE TABLE FL_EMP_CODE
 );
 
 ----------------------------------------------------------------------------------
-
 CREATE TABLE FL_EMP
 (
     EMP_NO        NUMBER        NOT NULL,
@@ -62,16 +61,16 @@ CREATE TABLE FL_EMP
 
 CREATE TABLE FL_EMP_ADMIN
 (
-    EMP_NO            NUMBER                       NOT NULL,
-    EMP_EMAIL         VARCHAR2(100)                NOT NULL,
-    LOGIN_DATE        TIMESTAMP(6) DEFAULT SYSDATE NOT NULL,
-    JOIN_DATE         TIMESTAMP(6) DEFAULT SYSDATE NOT NULL,
-    US_CHANGE_PW_DATE TIMESTAMP(6) DEFAULT SYSDATE,
+    EMP_NO            NUMBER        NOT NULL,
+    EMP_EMAIL         VARCHAR2(100) NOT NULL,
+    LOGIN_DATE        VARCHAR2(20),
+    JOIN_DATE         VARCHAR2(20)  NOT NULL,
+    US_CHANGE_PW_DATE VARCHAR2(20),
     LOGIN_FAIL_COUNT  NUMBER,
     LIST_ACCESS_DATE  VARCHAR2(10),
-    PJT_DUTY_C        VARCHAR2(3)                  NOT NULL,
-    PJT_EMP_DIV_C     VARCHAR2(3)                  NOT NULL,
-    PJT_JG_C          VARCHAR2(3)                  NOT NULL,
+    PJT_DUTY_C        VARCHAR2(3),
+    PJT_JG_C          VARCHAR2(3),
+    EMP_AUTH          VARCHAR2(5)   NOT NULL,
     CONSTRAINT PK_FL_EMP_ADMIN
         PRIMARY KEY (EMP_NO, EMP_EMAIL),
     CONSTRAINT FK_FL_EMP_ADMIN

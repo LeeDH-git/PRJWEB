@@ -3,14 +3,11 @@ package org.leedh.user.dao;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
 import org.leedh.user.vo.EmpVO;
-import org.leedh.user.vo.LoginDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 @Repository
 @Slf4j
@@ -33,11 +30,22 @@ public class UserDaoImpl implements UserDao {
         log.debug("register error : " + empVO);
     }
 
-    // 로그인 처리
+    // 회원 정보 존재 확인
     @Override
-    public EmpVO login(LoginDTO loginDTO) throws Exception {
-        return sqlSession.selectOne(NAMESPACE + ".login", loginDTO);
+    public Integer selectUser(EmpVO empVO) {
+        return sqlSession.selectOne(NAMESPACE + ".selectUser", empVO);
+
+    }
+    // 회원정보 검색
+    @Override
+    public EmpVO selectEmpInfo(EmpVO empVO) {
+        return sqlSession.selectOne(NAMESPACE + ".selectEmpInfo", empVO);
     }
 
+    // 사용자 권한 검색(1명)
+    @Override
+    public List<String> selectEmpAuthOne(EmpVO empVO) {
+        return sqlSession.selectOne(NAMESPACE+".selectEmpAuthOne",empVO);
+    }
 }
 
