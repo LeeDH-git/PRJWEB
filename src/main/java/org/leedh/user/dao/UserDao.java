@@ -9,12 +9,12 @@ public interface UserDao {
     void register(EmpVO empVO) throws Exception;
 
     // 회원 정보 존재 확인
-    Integer selectUser(EmpVO empVO);
+    Integer selectUser(String empEmail);
 
     // 회원정보 검색
-    EmpVO selectEmpInfo(EmpVO empVO);
+    EmpVO selectEmpInfo(String empEmail);
 
     // 사용자 권한 검색(1명)
-    List<String> selectEmpAuthOne(EmpVO empVO);
+    List<String> selectEmpAuthOne(String empEmail);
 
 }

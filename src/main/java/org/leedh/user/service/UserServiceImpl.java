@@ -5,6 +5,8 @@ import org.leedh.user.vo.EmpVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -22,14 +24,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Integer selectUser(EmpVO empVO) {
-        return userDao.selectUser(empVO);
+    public Integer selectUser(String empEmail) {
+        return userDao.selectUser(empEmail);
     }
 
     @Override
-    public EmpVO selectEmpInfo(EmpVO empVO) {
-        return userDao.selectEmpInfo(empVO);
+    public EmpVO selectEmpInfo(String empEmail) {
+        return userDao.selectEmpInfo(empEmail);
     }
 
-
+    @Override
+    public List<String> selectEmpAuthOne(String empEmail) {
+        return selectEmpAuthOne(empEmail);
+    }
 }
