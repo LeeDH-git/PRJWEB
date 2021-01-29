@@ -51,7 +51,7 @@ public class UserLoginServiceImpl implements UserLoginService, AuthenticationFai
         EmpDetailVO empDetails = new EmpDetailVO();
 
         // 사용자 정보 select
-        EmpVO empInfo = userDao.selectEmpInfo(empEmail);
+        EmpVO empInfo = userDao.selectEmpInfoSearch(empEmail);
 
         // 사용자 정보 없으면 예외 처리
         if (empInfo == null) {
@@ -64,7 +64,7 @@ public class UserLoginServiceImpl implements UserLoginService, AuthenticationFai
             empDetails.setEmpNm(empInfo.getEmpNm());
 
             // 사용자 권한 select해서 받아온 List<String> 객체 주입
-            empDetails.setAuthorities(userDao.selectEmpAuthOne(empEmail));
+            empDetails.setAuthorities(userDao.selectEmpAuth(empEmail));
         }
 
         return empDetails;

@@ -30,24 +30,18 @@ public class UserDaoImpl implements UserDao {
         log.debug("register error : " + empVO);
     }
 
-    // 회원정보 검색
     @Override
-    public EmpVO selectEmpInfo(String empEmail) {
-        return sqlSession.selectOne(NAMESPACE + ".selectEmpInfo",empEmail);
+    public Integer selectEmpInfoCount(String empEmail) {
+        return sqlSession.selectOne(NAMESPACE + ".selectEmpInfoCount", empEmail);
     }
 
-    // 사용자 권한 검색(1명)
     @Override
-    public List<String> selectEmpAuthOne(String empEmail) {
-        return sqlSession.selectOne(NAMESPACE+".selectEmpAuthOne",empEmail);
+    public EmpVO selectEmpInfoSearch(String empEmail) {
+        return sqlSession.selectOne(NAMESPACE + ".selectEmpInfoSearch", empEmail);
     }
 
-    // 회원 정보 존재 확인
     @Override
-    public Integer selectUser(String empEmail) {
-        return sqlSession.selectOne(NAMESPACE + ".selectUser", empEmail);
-
+    public List<String> selectEmpAuth(String empEmail) {
+        return sqlSession.selectOne(NAMESPACE + ".selectEmpAuth", empEmail);
     }
-
 }
-

@@ -91,6 +91,9 @@
         </s:authentication-provider>
     </s:authentication-manager>
 
+    <!-- 패스워드 단방향 암호화 -->
+    <bean id="passwordEncoder"
+          class="org.leedh.common.util.BCryptPwEncodingUtil" />
 
     <tx:annotation-driven proxy-target-class="true"/>
 

@@ -25,24 +25,24 @@
     </insert>
 
     <!-- 사용자 정보 여부 조회 -->
-    <select id="selectUser" parameterType="EmpVO" resultType="Integer">
+    <select id="selectEmpInfoCount" parameterType="String" resultType="Integer">
         SELECT COUNT(*)
         FROM FL_EMP
         WHERE EMP_EMAIL = #{empEmail};
     </select>
 
     <!-- 사용자 정보 조회(1명) -->
-    <select id="selectEmpInfo" parameterType="EmpVO" resultType="EmpVO">
+    <select id="selectEmpInfoSearch" parameterType="String" resultType="EmpVO">
         SELECT * FROM FL_EMP
         WHERE EMP_EMAIL = #{empEmail}
     </select>
 
     <!-- 사용자 목록 조회(전체) -->
-    <select id="selectUserInfoList" resultType="EmpVO">
+    <select id="selectUserInfoList" parameterType="String" resultType="String">
         SELECT * FROM FL_EMP
     </select>
 
-    <select id="selectEmpAuthOne" parameterType="EmpVO" resultType="EmpVO">
+    <select id="selectEmpAuth" parameterType="String" resultType="String">
         SELECT EMP_AUTH FROM
         FL_EMP_ADMIN WHERE EMP_EMAIL= #{empEmail}
     </select>
