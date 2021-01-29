@@ -39,13 +39,7 @@ public class UserController {
 //        return "redirect:/user/login";
 //    }
 
-    /**
-     * 회원가입 등록 요청
-     *
-     * @param userInfo : 입력받은 정보 VO
-     * @param model    : 회원가입 결과 메세지 전달
-     * @return
-     */
+    // 회원가입 등록 요청
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String register(@ModelAttribute EmpVO empVO, Model model) throws Exception {
 
@@ -62,13 +56,7 @@ public class UserController {
         }
     }
 
-    /**
-     * 회원정보 조회 요청
-     *
-     * @param prin  : 사용자 권한 객체
-     * @param model : 회원정보 전달
-     * @return
-     */
+    // 회원정보 조회 요청
     @RequestMapping("/user/empCheck")
     public String userempCheck(Principal prin, Model model) {
 
