@@ -2,14 +2,15 @@ package org.leedh.user.controller;
 
 import org.leedh.user.service.UserService;
 import org.leedh.user.vo.EmpVO;
-import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
 
 @Controller
 @RequestMapping("/user")
@@ -27,16 +28,55 @@ public class UserController {
         return "/user/register";
     }
 
-    // 회원가입 처리
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String register(EmpVO empVO, RedirectAttributes rttr) throws Exception {
-        String pw = BCrypt.hashpw(empVO.getEmpPw(), BCrypt.gensalt());
-        empVO.setEmpPw(pw);
-        userService.register(empVO);
-        rttr.addFlashAttribute("Message", "REGISTERED");
+//    // 회원가입 처리
+//    @RequestMapping(value = "/register", method = RequestMethod.POST)
+//    public String register(EmpVO empVO, RedirectAttributes rttr) throws Exception {
+//        String pw = BCrypt.hashpw(empVO.getEmpPw(), BCrypt.gensalt());
+//        empVO.setEmpPw(pw);
+//        userService.register(empVO);
+//        rttr.addFlashAttribute("Message", "REGISTERED");
+//
+//        return "redirect:/user/login";
+//    }
 
-        return "redirect:/user/login";
+    /**
+     * 회원가입 등록 요청
+     *
+     * @param userInfo : 입력받은 정보 VO
+     * @param model    : 회원가입 결과 메세지 전달
+     * @return
+     */
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String register(@ModelAttribute EmpVO empVO, Model model) throws Exception {
+
+        // 회원정보 및 디폴트 권한 입력
+        boolean result = userService.register(empVO);
+
+        if (result) {
+            model.addAttribute("loginMsg", "회원 가입이 완료되었습니다. 로그인해주세요");
+            return "/user/login";
+
+        } else {
+            model.addAttribute("registerUserMsg", "이미 존재하는 아이디입니다.");
+            return "/user/register";
+        }
     }
+
+    /**
+     * 회원정보 조회 요청
+     *
+     * @param prin  : 사용자 권한 객체
+     * @param model : 회원정보 전달
+     * @return
+     */
+    @RequestMapping("/user/empCheck")
+    public String userempCheck(Principal prin, Model model) {
+
+        EmpVO empVO = userService.selectEmpInfoSearch(prin.getName());
+        model.addAttribute("empVO", empVO);
+        return "/user/empCheck";
+    }
+
 
     // 로그인 화면 요청
     @RequestMapping(value = "/login", method = RequestMethod.POST)
