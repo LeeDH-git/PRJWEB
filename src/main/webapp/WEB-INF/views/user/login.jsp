@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +50,7 @@
                                         </div>
                                         <!-- /.col -->
                                     </div>
-
+                                    <sec:csrfInput/>
                                     <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                         <a class="small" href="password.jsp">비밀번호를 잊으셨나요?</a>
                                     </div>

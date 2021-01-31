@@ -75,7 +75,7 @@ public class UserController {
 
         // 요청 시점의 사용자 URI 정보를 Session의 Attribute에 담아서 전달(잘 지워줘야 함)
         // 로그인이 틀려서 다시 하면 요청 시점의 URI가 로그인 페이지가 되므로 조건문 설정
-        if (uri != null && !uri.contains("/login")) {
+        if (uri != null && !uri.contains("/user/login")) {
             req.getSession().setAttribute("prevPage", req.getHeader("Referer"));
         }
         return "/user/login";

@@ -2,6 +2,7 @@ package org.leedh.user.service;
 
 import org.leedh.common.util.BCryptPwEncodingUtil;
 import org.leedh.user.vo.EmpDetailVO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -13,6 +14,12 @@ public class UserLoginAuthProvider implements AuthenticationProvider {
 
     UserDetailsService userDetailsService;
     BCryptPwEncodingUtil pwEncoder;
+
+    public UserLoginAuthProvider(UserDetailsService userDetailsService, BCryptPwEncodingUtil pwEncoder) {
+        this.userDetailsService = userDetailsService;
+        this.pwEncoder = pwEncoder;
+    }
+
 
     @Override
     public Authentication authenticate(Authentication authentication)

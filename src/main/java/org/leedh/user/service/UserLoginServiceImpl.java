@@ -11,6 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -30,7 +31,7 @@ import java.util.List;
 
 @Slf4j
 @Service("userLoginServiceImpl")
-public class UserLoginServiceImpl implements UserLoginService  {
+public class UserLoginServiceImpl implements UserDetailsService  {
 
     private final UserDao userDao;
 
@@ -39,9 +40,8 @@ public class UserLoginServiceImpl implements UserLoginService  {
         this.userDao = userDao;
     }
 
-
     @Override
-    public UserDetails loadUserByUsername(String empEmail) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String empEmail) {
         // 최종적으로 리턴해야할 객체
         EmpDetailVO empDetails = new EmpDetailVO();
 

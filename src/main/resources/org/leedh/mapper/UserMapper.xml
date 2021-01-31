@@ -9,31 +9,22 @@
     <insert id="register" parameterType="EmpVO">
        INSERT ALL
         INTO FL_EMP
-        VALUES (#{empNo},
-            #{empNm},
-            #{empPw},
-            #{empEmail},
-            #{empPhoneNo},
-            #{empEmerNo},
-            #{empJoinDate},
-            #{pjtPosC},
-            #{pjtLvC})
+        VALUES (#{empNo},#{empNm},#{empPw},#{empEmail},#{empPhoneNo},#{empEmerNo},#{empJoinDate},#{pjtPosC},#{pjtLvC})
         INTO FL_EMP_ADMIN (EMP_NO, EMP_EMAIL,JOIN_DATE,EMP_AUTH)
         VALUES (#{empNo},#{empEmail},to_char(sysdate,'yyyy.mm.dd hh24:mi'),'EMP')
-        SELECT * FROM dual;
-
+        SELECT * FROM dual
     </insert>
 
     <!-- 사용자 정보 여부 조회 -->
     <select id="selectEmpInfoCount" parameterType="String" resultType="Integer">
         SELECT COUNT(*) FROM FL_EMP
-        WHERE EMP_EMAIL = #{empEmail}
+        WHERE EMP_EMAIL = #{value}
     </select>
 
     <!-- 사용자 정보 조회(1명) -->
     <select id="selectEmpInfoSearch" parameterType="String" resultType="EmpVO">
         SELECT * FROM FL_EMP
-        WHERE EMP_EMAIL = #{empEmail}
+        WHERE EMP_EMAIL = #{value}
     </select>
 
     <!-- 사용자 목록 조회(전체) -->
@@ -44,7 +35,7 @@
     <!-- 사용자 권한 조회 -->
     <select id="selectEmpAuth" parameterType="String" resultType="String">
         SELECT EMP_AUTH FROM
-        FL_EMP_ADMIN WHERE EMP_EMAIL= #{empEmail}
+        FL_EMP_ADMIN WHERE EMP_EMAIL = #{value}
     </select>
 
 </mapper>
