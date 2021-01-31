@@ -67,7 +67,7 @@ public class UserController {
 
 
     // 로그인 화면 요청
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = {RequestMethod.POST, RequestMethod.GET})
     public String loginCheck(HttpServletRequest req) throws Exception {
 
         // 사용자가 서버에 요청하는 시점에 가지고 있는 URI 정보

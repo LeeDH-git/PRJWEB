@@ -20,12 +20,10 @@
 
         <property name="driverClassName"
                   value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
-        <property name="jdbcUrl"
-                  value="jdbc:log4jdbc:oracle:thin:@192.168.0.101:1521:orcl"/>
-        <!--
+<!--        <property name="jdbcUrl"-->
+<!--                  value="jdbc:log4jdbc:oracle:thin:@192.168.0.101:1521:orcl"/>-->
                 <property name="jdbcUrl"
                           value="jdbc:log4jdbc:oracle:thin:@localhost:1521:orcl"/>
-        -->
         <property name="username" value="prgmgtest"/>
         <property name="password" value="12345"/>
 
@@ -56,6 +54,7 @@
 
         <!-- Static Resources All Access Allow -->
         <s:intercept-url pattern="/resources/**" access="permitAll()"/>
+        <s:intercept-url pattern="/resources/bootstrap/**" access="permitAll()"/>
 
         <!-- Non-Login Status >> Login page / Register page Access Deny -->
         <s:intercept-url pattern="/user/login"  access="isAnonymous()"/>
@@ -70,8 +69,8 @@
             password-parameter="empPw"
             login-processing-url="/user/loginCheck"
             login-page="/user/login" default-target-url="/"
-            authentication-failure-handler-ref="userLoginServiceImpl"
-            authentication-success-handler-ref="userLoginServiceImpl"/>
+            authentication-failure-handler-ref="loginFailHandler"
+            authentication-success-handler-ref="loginSuccessHandler"/>
 
         <!-- Logout config -->
         <s:logout
@@ -85,9 +84,11 @@
 
     </s:http>
 
+
+
     <!-- DB Config -->
     <s:authentication-manager>
-        <s:authentication-provider ref="userLoginServiceImpl">
+        <s:authentication-provider ref="userLoginAuthProvider">
         </s:authentication-provider>
     </s:authentication-manager>
 
@@ -98,6 +99,6 @@
     <tx:annotation-driven proxy-target-class="true"/>
 
     <context:component-scan base-package="org.leedh"/>
-
+    <context:component-scan base-package="org.leedh.user.service"/>
 
 </beans>

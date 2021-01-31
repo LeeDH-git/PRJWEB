@@ -42,6 +42,7 @@
         SELECT * FROM FL_EMP
     </select>
 
+    <!-- 사용자 권한 조회 -->
     <select id="selectEmpAuth" parameterType="String" resultType="String">
         SELECT EMP_AUTH FROM
         FL_EMP_ADMIN WHERE EMP_EMAIL= #{empEmail}
