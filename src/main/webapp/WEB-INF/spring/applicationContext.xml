@@ -67,8 +67,7 @@
         <s:form-login
             username-parameter="empEmail"
             password-parameter="empPw"
-            login-processing-url="/user/loginCheck"
-            login-page="/user/login" default-target-url="/"
+            login-processing-url="/user/loginCheck" login-page="/user/login"
             authentication-failure-handler-ref="loginFailHandler"
             authentication-success-handler-ref="loginSuccessHandler"/>
 

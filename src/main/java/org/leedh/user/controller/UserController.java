@@ -23,7 +23,7 @@ public class UserController {
     }
 
     // 회원가입 페이지
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @RequestMapping(value = "/registerPage", method = RequestMethod.GET)
     public String registerGET() throws Exception {
         return "/user/register";
     }
@@ -40,7 +40,7 @@ public class UserController {
 //    }
 
     // 회원가입 등록 요청
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @RequestMapping(value = "/registerCheck", method = {RequestMethod.POST})
     public String register(@ModelAttribute EmpVO empVO, Model model) throws Exception {
 
         // 회원정보 및 디폴트 권한 입력
@@ -58,7 +58,7 @@ public class UserController {
 
     // 회원정보 조회 요청
     @RequestMapping("/user/empCheck")
-    public String userempCheck(Principal prin, Model model) {
+    public String empCheck(Principal prin, Model model) {
 
         EmpVO empVO = userService.selectEmpInfoSearch(prin.getName());
         model.addAttribute("empVO", empVO);
@@ -75,7 +75,7 @@ public class UserController {
 
         // 요청 시점의 사용자 URI 정보를 Session의 Attribute에 담아서 전달(잘 지워줘야 함)
         // 로그인이 틀려서 다시 하면 요청 시점의 URI가 로그인 페이지가 되므로 조건문 설정
-        if (uri != null && !uri.contains("/user/login")) {
+        if (uri != null && !uri.contains("/login")) {
             req.getSession().setAttribute("prevPage", req.getHeader("Referer"));
         }
         return "/user/login";

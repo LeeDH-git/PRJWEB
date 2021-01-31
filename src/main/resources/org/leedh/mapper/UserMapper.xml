@@ -26,9 +26,8 @@
 
     <!-- 사용자 정보 여부 조회 -->
     <select id="selectEmpInfoCount" parameterType="String" resultType="Integer">
-        SELECT COUNT(*)
-        FROM FL_EMP
-        WHERE EMP_EMAIL = #{empEmail};
+        SELECT COUNT(*) FROM FL_EMP
+        WHERE EMP_EMAIL = #{empEmail}
     </select>
 
     <!-- 사용자 정보 조회(1명) -->

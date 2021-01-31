@@ -55,7 +55,7 @@
                                 </form>
                             </div>
                             <div class="card-footer text-center">
-                                <div class="small"><a href="${pageContext.request.contextPath}/user/register">계정이 없으신가요?
+                                <div class="small"><a href="${pageContext.request.contextPath}/user/registerPage">계정이 없으신가요?
                                     회원가입!</a></div>
                             </div>
                         </div>

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,7 @@
                             <div class="card-header"><h3 class="text-center font-weight-light my-4">회원가입</h3>
                             </div>
                             <div class="card-body">
-                                <form action="${pageContext.request.contextPath}/user/register" method="post">
+                                <form action="${pageContext.request.contextPath}/user/registerCheck" method="post">
                                     <div class=form-group">
                                         <label class="small mb-1" for="empNo">사원 번호</label>
                                         <input class="form-control py-4" id="empNo" name="empNo" type="text"
@@ -89,11 +90,12 @@
                                                 <option value="A04">특급</option>
                                             </select>
                                         </div>
+                                        <sec:csrfInput/>
                                         <div style="text-align:center;">
                                             <button type="submit" class="btn btn-primary">회원가입</button>
                                             <br>
                                             <div class="card-footer text-center">
-                                                <div class="small"><a href="login.jsp">계정이 있으신가요? 로그인으로</a>
+                                                <div class="small"><a href="${pageContext.request.contextPath}/user/login">계정이 있으신가요? 로그인으로</a>
                                                 </div>
                                             </div>
                                         </div>
