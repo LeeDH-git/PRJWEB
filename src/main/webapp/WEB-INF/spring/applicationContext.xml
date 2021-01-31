@@ -93,7 +93,7 @@
 
     <!-- 패스워드 단방향 암호화 -->
     <bean id="passwordEncoder"
-          class="org.leedh.common.util.BCryptPwEncodingUtil" />
+          class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 
     <tx:annotation-driven proxy-target-class="true"/>
 

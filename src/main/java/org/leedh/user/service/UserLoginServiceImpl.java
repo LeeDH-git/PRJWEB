@@ -30,7 +30,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Slf4j
-@Service("userLoginServiceImpl")
+@Service
 public class UserLoginServiceImpl implements UserDetailsService  {
 
     private final UserDao userDao;
